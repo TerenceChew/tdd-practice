@@ -1,5 +1,16 @@
+const checkInputsValidity = (str, num) => {
+  if (typeof str !== "string" || typeof num !== "number") return false;
+
+  return true;
+};
+
 const caesarCipher = {
   encrypt(str, key) {
+    const areInputsValid = checkInputsValidity(str, key);
+
+    if (!areInputsValid) return "Inputs must be a string and a number!";
+
+    // Else
     const positiveKey = Math.abs(key);
     const processedKey = positiveKey > 26 ? positiveKey % 26 : positiveKey;
 
@@ -26,6 +37,11 @@ const caesarCipher = {
       .join("");
   },
   decrypt(str, key) {
+    const areInputsValid = checkInputsValidity(str, key);
+
+    if (!areInputsValid) return "Inputs must be a string and a number!";
+
+    // Else
     const positiveKey = Math.abs(key);
     const processedKey = positiveKey > 26 ? positiveKey % 26 : positiveKey;
 

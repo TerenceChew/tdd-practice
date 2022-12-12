@@ -26,3 +26,9 @@ test("Analyze array", () => {
     length: 5,
   });
 });
+
+test("Analyze array", () => {
+  expect(analyzeArray([50, 100, 50, "NaN"])).toBe(
+    "Array should contain numbers only!"
+  );
+});

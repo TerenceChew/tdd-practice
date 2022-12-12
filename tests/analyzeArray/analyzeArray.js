@@ -1,18 +1,19 @@
 const analyzeArray = (arr) => {
-  const processedArr = arr.map((n) => Number(n));
+  const isValidArr = arr.every((e) => typeof e === "number");
+
+  if (!isValidArr) return "Array should contain numbers only!";
+
   const obj = {};
 
   obj.average = Number(
-    (
-      processedArr.reduce((total, n) => total + n, 0) / processedArr.length
-    ).toFixed(2)
+    (arr.reduce((total, n) => total + n, 0) / arr.length).toFixed(2)
   );
 
-  obj.min = processedArr.sort((a, b) => a - b)[0];
+  obj.min = arr.sort((a, b) => a - b)[0];
 
-  obj.max = processedArr.sort((a, b) => b - a)[0];
+  obj.max = arr.sort((a, b) => b - a)[0];
 
-  obj.length = processedArr.length;
+  obj.length = arr.length;
 
   return obj;
 };

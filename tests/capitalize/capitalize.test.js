@@ -15,3 +15,7 @@ test("Capitalize", () => {
 test("Capitalize", () => {
   expect(capitalize("july")).toMatch("July");
 });
+
+test("Number as input", () => {
+  expect(capitalize(5)).toMatch("Input should be a string!");
+});

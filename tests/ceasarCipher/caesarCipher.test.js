@@ -55,3 +55,18 @@ test("Decrypt", () => {
 test("Decrypt", () => {
   expect(decrypt("Dahhk Sknhz!", 100)).toBe("Hello World!");
 });
+
+// Error handling
+test("Two strings as inputs", () => {
+  expect(encrypt("Hello World!", "100")).toBe(
+    "Inputs must be a string and a number!"
+  );
+});
+
+test("Two numbers as inputs", () => {
+  expect(decrypt(100, 100)).toBe("Inputs must be a string and a number!");
+});
+
+test("A number & a string as inputs", () => {
+  expect(decrypt(100, "Hello")).toBe("Inputs must be a string and a number!");
+});

@@ -25,3 +25,7 @@ test("Divide", () => {
 test("Divide", () => {
   expect(divide(5, 4)).toBeCloseTo(1.25);
 });
+
+test("Invalid inputs", () => {
+  expect(divide(5, "5")).toBe("Inputs must be numbers only!");
+});
