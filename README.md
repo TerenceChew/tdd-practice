@@ -1,1 +1,3 @@
-# testing-practice
+# TDD-Practice
+
+TDD practice with Jest
